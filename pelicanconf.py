@@ -33,15 +33,20 @@ DEFAULT_PAGINATION = False
 
 OUTPUT_PATH = '../output'
 THEME = 'theme'
-PLUGIN_PATHS = ['plugins/', ]
-PLUGINS = ['i18n_subsites', 'pelican-ipynb.markup']
+
+MARKUP = ('md', 'ipynb')
+
+PLUGIN_PATHS = ['./plugins', ]
+PLUGINS = ['i18n_subsites', 'ipynb.markup']
+
+IGNORE_FILES = ['.ipynb_checkpoints']
+
 IPYNB_USE_METACELL = True
+
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],
 }
 
-MARKUP = ('md', 'ipynb')
-IGNORE_FILES = [".ipynb_checkpoints"]
 
 BOOTSTRAP_THEME = 'flatly'
 PYGMENTS_STYLE = 'monokai'
